@@ -1,0 +1,313 @@
+body {
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+}
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.app {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ae4477, #0aff5e, #102bff);
+    background-size: 500% 500%;
+    animation: gradient 30s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    
+    25% {
+        background-position: 25% 75%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    75% {
+        background-position: 25% 75%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+header {
+    display: block;
+    unicode-bidi: isolate;
+}
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+nav {
+    display: block;
+    unicode-bidi: isolate;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+form {
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+}
+fieldset {
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: rgb(192, 192, 192);
+    border-image: initial;
+}
+button:active {
+    border-style: inset;
+}
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
+}
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+/* ------------ общие стили ------------ */
+.header {
+    width: 100%;
+    padding-inline: 20px;
+    padding-block: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.header__logo {
+    max-width: 250px;
+}
+g{
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: rgb(0, 0, 0);
+}
+.nav__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+    text-align: center;
+}
+.nav, .nav__links {
+    width: 100%;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+a:-webkit-any-link:focus-visible {
+    outline-offset: 1px;
+}
+a:-webkit-any-link:active {
+    color: -webkit-activelink;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.nav__link {
+    text-decoration: none;
+    padding: 8px 0;
+    border-radius: 2px;
+    transition: all .2s ease-out;
+    overflow: hidden;
+}
+.nav__link:hover {
+    animation: glow 1s infinite;
+}
+.nav__link:active {
+    background-color: #595bc0;
+}
+.nav__link_active {
+    color: #f5f5f5;
+    animation: glow 1s infinite;
+    transition: .6s;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 15px #05466b;
+    }
+    50% {
+        box-shadow: 0 0 7px #11425c;
+    }
+}
+.button {
+    width: 40px;
+    height: 100%;
+    border: 0;
+    background-color: #e0d9d999;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: 20px 20px;
+    border-radius: 2px;
+    padding: 0;
+    cursor: pointer;
+    transition: all .6s ease;
+}
+.nav__button-link:focus {
+    background-color: #595bc0;
+    color: #fff;
+}
+.nav__button-link:active {
+    scale: .9;
+}
+.nav__button-link:hover {
+    background-color: #696be3;
+    scale: 1;
+    color: #fff;
+}
+.nav__button-link {
+    width: 100%;
+    color: #000;
+    padding: 8px 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+}
+/* -------- header --------- */
+.main {
+    width: 100%;
+    max-width: 1024px;
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+.form {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.form__field {
+    border: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.form__input {
+    background: rgb(224, 217, 217, .6);
+    border: 0;
+    height: 100%;
+    border-radius: 2px;
+    width: 100%;
+    padding: 5px;
+    font-size: 18px;
+    line-height: 1.22;
+    font-weight: 500;
+    color: #2b2b2b;
+}
+.form__buttons {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.form__button-item {
+    height: 100%;
+}
+.form__button-close {
+    background-image: url(/img/cross_114275.svg);
+}
+.form__button-search:active, .form__button-close:active {
+    scale: 1.2;
+}
+.form__button-close:hover {
+    background-color: transparent;
+    scale: 1.4;
+}
+.form__button-search {
+    background-image: url(/img/magnifier-1_icon-icons.com_56924.svg);
+}
+.form__button-search:hover {
+    background-color: transparent;
+    scale: 1.4;
+}
+/* -------- main-form --------- */
+.gifs-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    place-items: center;
+    place-content: center;
+}
+.gif__link {
+    width: 100%;
+    display: block;
+}
+.gif {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 282px;
+    transition: transform .7s ease;
+    box-sizing: border-box;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 10px 20px #0006;
+}
+.gif:hover {
+    transform: translateY(-10px);
+}
+
+.button_type_show-more:hover {
+    background-color: transparent;
+    scale: 1.4;
+}
+/* -------- main-gifs --------- */
+
+.button_type_show-more {
+    width: 100%;
+    max-width: 60px;
+    background-color: transparent;
+    min-height: 60px;
+    background-image: url(/img/arrow.svg);
+    background-size: 50px 50px;
+}
+/* -------- main-pagination --------- */
