@@ -266,8 +266,9 @@ a:-webkit-any-link {
     scale: 1.4;
 }
 /* -------- main-form --------- */
-.gifs-container {
+#gifs-container {
     width: 100%;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
@@ -295,7 +296,6 @@ a:-webkit-any-link {
 .gif:hover {
     transform: translateY(-10px);
 }
-
 .button_type_show-more:hover {
     background-color: transparent;
     scale: 1.4;
@@ -310,4 +310,4 @@ a:-webkit-any-link {
     background-image: url(/img/arrow.svg);
     background-size: 50px 50px;
 }
-/* -------- main-pagination --------- */
+/* -------- main- --------- */
