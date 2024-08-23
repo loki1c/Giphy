@@ -1,90 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
     <title>GIFS APP</title>
-    
-</head>
-<body>
-    <div id ='root'class="app">
-        <header class="header">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 35" class="header__logo">
-                <g fill-rule="evenodd" clip-rule="evenodd">
-                    <path fill="#00ff99" d="M0 3h4v29H0z"></path>
-                    <path fill="#9933ff" d="M24 11h4v21h-4z"></path>
-                    <path fill="#00ccff" d="M0 31h28v4H0z"></path>
-                    <path fill="#fff35c" d="M0 0h16v4H0z"></path>
-                    <path fill="#ff6666" d="M24 8V4h-4V0h-4v12h12V8"></path>
-                    <path fill="#121212" opacity="0.4" d="M24 16v-4h4M16 0v4h-4"></path>
-                </g>
-                <g fill="#000000">
-                    <path d="M59.1 12c-2-1.9-4.4-2.4-6.2-2.4-4.4 0-7.3 2.6-7.3 8 0 3.5 1.8 7.8 7.3 7.8 1.4 0 3.7-.3 5.2-1.4v-3.5h-6.9v-6h13.3v12.1c-1.7 3.5-6.4 5.3-11.7 5.3-10.7 0-14.8-7.2-14.8-14.3 0-7.1 4.7-14.4 14.9-14.4 3.8 0 7.1.8 10.7 4.4L59.1 12zM68.2 31.2V4h7.6v27.2h-7.6zM88.3 23.8v7.3h-7.7V4h13.2c7.3 0 10.9 4.6 10.9 9.9 0 5.6-3.6 9.9-10.9 9.9h-5.5zm0-6.5h5.5c2.1 0 3.2-1.6 3.2-3.3 0-1.8-1.1-3.4-3.2-3.4h-5.5v6.7zM125 31.2V20.9h-9.8v10.3h-7.7V4h7.7v10.3h9.8V4h7.6v27.2H125zM149.2 13.3l5.9-9.3h8.7v.3l-10.8 16v10.8h-7.7V20.3L135 4.3V4h8.7l5.5 9.3z"></path>
-                </g>
-            </svg>
-            <nav class="nav">
-                <ul class="nav__links">
-                        <li><a aria-current="page" class="nav__link nav__link_active" href="#">
-                        <button class="button nav__button-link">Поиск</button></a>
-                    </li>
-                        <li><a class="nav__link" href="#">
-                        <button class="button nav__button-link">Тренды</button></a>
-                    </li>
-                        <li><a class="nav__link" href="#">
-                            <button class="button nav__button-link">Рандом</button></a>
-                    </li>
-                    </ul>
-            </nav>
-        </header>
-        <main class="main">
-            <form class="form" novalidate="">
-                <fieldset class="form__field">
-                    <input type="text" class="form__input" id="search" required="" minlength="2" placeholder="Поиск..." value="">
-                </fieldset>
-                    <ul class="form__buttons">
-                        <li class="form__button-item">
-                            <button class="button form__button-close" type="reset"></button>
-                        </li>
-                         <li class="form__button-item">
-                                <button class="button form__button-search" type="submit"></button>
-                         </li>
-                    </ul>
-            </form>
-            <section id="gifs-container">
-                <a href="https://giphy.com/gifs/human-note-reminder-3o7bu1QBfylzi8MmYw" class="gif__link" rel="noreferrer noopener nofollow" target="_blank">
-                    <img src="https://media1.giphy.com/media/3o7bu1QBfylzi8MmYw/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" alt="гифки" class="gif undefined">
-                </a>
+  </head>
+  <body>
+    <div id="root" class="app">
+      <header class="header">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 164 35"
+          class="header__logo"
+        >
+          <g fill-rule="evenodd" clip-rule="evenodd">
+            <path fill="#00ff99" d="M0 3h4v29H0z"></path>
+            <path fill="#9933ff" d="M24 11h4v21h-4z"></path>
+            <path fill="#00ccff" d="M0 31h28v4H0z"></path>
+            <path fill="#fff35c" d="M0 0h16v4H0z"></path>
+            <path fill="#ff6666" d="M24 8V4h-4V0h-4v12h12V8"></path>
+            <path fill="#121212" opacity="0.4" d="M24 16v-4h4M16 0v4h-4"></path>
+          </g>
+          <g fill="#000000">
+            <path
+              d="M59.1 12c-2-1.9-4.4-2.4-6.2-2.4-4.4 0-7.3 2.6-7.3 8 0 3.5 1.8 7.8 7.3 7.8 1.4 0 3.7-.3 5.2-1.4v-3.5h-6.9v-6h13.3v12.1c-1.7 3.5-6.4 5.3-11.7 5.3-10.7 0-14.8-7.2-14.8-14.3 0-7.1 4.7-14.4 14.9-14.4 3.8 0 7.1.8 10.7 4.4L59.1 12zM68.2 31.2V4h7.6v27.2h-7.6zM88.3 23.8v7.3h-7.7V4h13.2c7.3 0 10.9 4.6 10.9 9.9 0 5.6-3.6 9.9-10.9 9.9h-5.5zm0-6.5h5.5c2.1 0 3.2-1.6 3.2-3.3 0-1.8-1.1-3.4-3.2-3.4h-5.5v6.7zM125 31.2V20.9h-9.8v10.3h-7.7V4h7.7v10.3h9.8V4h7.6v27.2H125zM149.2 13.3l5.9-9.3h8.7v.3l-10.8 16v10.8h-7.7V20.3L135 4.3V4h8.7l5.5 9.3z"
+            ></path>
+          </g>
+        </svg>
+        <nav class="nav">
+          <ul class="nav__links">
+            <li>
+              <a
+                aria-current="page"
+                class="nav__link nav__link_active"
+                href="#"
+              >
+                <button class="button nav__button-link">Поиск</button></a
+              >
+            </li>
+            <li>
+              <a class="nav__link" href="#">
+                <button class="button nav__button-link">Тренды</button></a
+              >
+            </li>
+            <li>
+              <a class="nav__link" href="#">
+                <button class="button nav__button-link">Рандом</button></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main">
+        <form class="form" novalidate="">
+          <fieldset class="form__field">
+            <input
+              type="text"
+              class="form__input"
+              id="search"
+              required=""
+              minlength="2"
+              placeholder="Поиск..."
+              value=""
+            />
+          </fieldset>
+          <ul class="form__buttons">
+            <li class="form__button-item">
+              <button class="button form__button-close" type="reset"></button>
+            </li>
+            <li class="form__button-item">
+              <button class="button form__button-search" type="submit"></button>
+            </li>
+          </ul>
+        </form>
+        <section id="gifs-container">
+          <a
+            href="https://giphy.com/gifs/human-note-reminder-3o7bu1QBfylzi8MmYw"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+          >
+            <img
+              src="https://media1.giphy.com/media/3o7bu1QBfylzi8MmYw/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
 
-                <a href="https://giphy.com/gifs/art-animation-3d-lKKXOCVviOAXS" class="gif__link" rel="noreferrer noopener nofollow" target="_blank"><img src="https://media1.giphy.com/media/lKKXOCVviOAXS/giphy-downsized.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy-downsized.gif&amp;ct=g" alt="гифки" class="gif undefined">
-                </a>
+          <a
+            href="https://giphy.com/gifs/art-animation-3d-lKKXOCVviOAXS"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media1.giphy.com/media/lKKXOCVviOAXS/giphy-downsized.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy-downsized.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
 
-                <a href="https://giphy.com/gifs/neonrated-neon-rated-crimes-of-the-future-30ZlXewkst5EdEe7oL" class="gif__link" rel="noreferrer noopener nofollow" target="_blank"><img src="https://media4.giphy.com/media/30ZlXewkst5EdEe7oL/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" alt="гифки" class="gif undefined">
-                </a>
+          <a
+            href="https://giphy.com/gifs/neonrated-neon-rated-crimes-of-the-future-30ZlXewkst5EdEe7oL"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media4.giphy.com/media/30ZlXewkst5EdEe7oL/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
 
-                 <a href="https://giphy.com/gifs/dog-human-painting-4y6DqPvlICp5S" class="gif__link" rel="noreferrer noopener nofollow" target="_blank"><img src="https://media0.giphy.com/media/4y6DqPvlICp5S/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" alt="гифки" class="gif undefined">
-                </a>
+          <a
+            href="https://giphy.com/gifs/dog-human-painting-4y6DqPvlICp5S"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media0.giphy.com/media/4y6DqPvlICp5S/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
 
-                <a href="https://giphy.com/gifs/snl-saturday-night-live-season-49-PZSKakN081R83ah0IH" class="gif__link" rel="noreferrer noopener nofollow" target="_blank"><img src="https://media2.giphy.com/media/PZSKakN081R83ah0IH/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" alt="гифки" class="gif undefined">
-                </a>
+          <a
+            href="https://giphy.com/gifs/snl-saturday-night-live-season-49-PZSKakN081R83ah0IH"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media2.giphy.com/media/PZSKakN081R83ah0IH/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
 
-                <a href="https://giphy.com/gifs/foxadhd-josh-freydkis-artisrs-on-tumblr-ANVjGfJKOR7Pi" class="gif__link" rel="noreferrer noopener nofollow" target="_blank"><img src="https://media0.giphy.com/media/ANVjGfJKOR7Pi/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" alt="гифки" class="gif undefined">
-                </a>
+          <a
+            href="https://giphy.com/gifs/foxadhd-josh-freydkis-artisrs-on-tumblr-ANVjGfJKOR7Pi"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media0.giphy.com/media/ANVjGfJKOR7Pi/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
 
-                <a href="https://giphy.com/gifs/technology-human-biotechnology-l0HlSNOxJB956qwfK" class="gif__link" rel="noreferrer noopener nofollow" target="_blank"><img src="https://media1.giphy.com/media/l0HlSNOxJB956qwfK/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" alt="гифки" class="gif undefined">
-                </a>
+          <a
+            href="https://giphy.com/gifs/technology-human-biotechnology-l0HlSNOxJB956qwfK"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media1.giphy.com/media/l0HlSNOxJB956qwfK/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
 
-                <a href="https://giphy.com/gifs/helloall-pride-queer-human-w3AOSBckIzlrod6YCa" class="gif__link" rel="noreferrer noopener nofollow" target="_blank"><img src="https://media0.giphy.com/media/w3AOSBckIzlrod6YCa/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g" alt="гифки" class="gif undefined">
-                </a>
+          <a
+            href="https://giphy.com/gifs/helloall-pride-queer-human-w3AOSBckIzlrod6YCa"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media0.giphy.com/media/w3AOSBckIzlrod6YCa/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
 
-                <a href="https://giphy.com/gifs/eternalfamilytv-eternal-family-tv-99ers-rw4mJTxN3zQzquCRZp" class="gif__link" rel="noreferrer noopener nofollow" target="_blank"><img src="https://media3.giphy.com/media/rw4mJTxN3zQzquCRZp/giphy-downsized.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy-downsized.gif&amp;ct=g" alt="гифки" class="gif undefined">
-                </a>
-            </section>
-            <button id="nextPage" class="button button_type_show-more" type="button"></button>
-        </main>
-    </div>    
+          <a
+            href="https://giphy.com/gifs/eternalfamilytv-eternal-family-tv-99ers-rw4mJTxN3zQzquCRZp"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media3.giphy.com/media/rw4mJTxN3zQzquCRZp/giphy-downsized.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy-downsized.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+        </section>
+        <section id="gifs-container">
+          <a
+            href="https://giphy.com/gifs/human-note-reminder-3o7bu1QBfylzi8MmYw"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+          >
+            <img
+              src="https://media1.giphy.com/media/3o7bu1QBfylzi8MmYw/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+
+          <a
+            href="https://giphy.com/gifs/art-animation-3d-lKKXOCVviOAXS"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media1.giphy.com/media/lKKXOCVviOAXS/giphy-downsized.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy-downsized.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+
+          <a
+            href="https://giphy.com/gifs/neonrated-neon-rated-crimes-of-the-future-30ZlXewkst5EdEe7oL"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media4.giphy.com/media/30ZlXewkst5EdEe7oL/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+
+          <a
+            href="https://giphy.com/gifs/dog-human-painting-4y6DqPvlICp5S"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media0.giphy.com/media/4y6DqPvlICp5S/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+
+          <a
+            href="https://giphy.com/gifs/snl-saturday-night-live-season-49-PZSKakN081R83ah0IH"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media2.giphy.com/media/PZSKakN081R83ah0IH/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+
+          <a
+            href="https://giphy.com/gifs/foxadhd-josh-freydkis-artisrs-on-tumblr-ANVjGfJKOR7Pi"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media0.giphy.com/media/ANVjGfJKOR7Pi/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+
+          <a
+            href="https://giphy.com/gifs/technology-human-biotechnology-l0HlSNOxJB956qwfK"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media1.giphy.com/media/l0HlSNOxJB956qwfK/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+
+          <a
+            href="https://giphy.com/gifs/helloall-pride-queer-human-w3AOSBckIzlrod6YCa"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media0.giphy.com/media/w3AOSBckIzlrod6YCa/giphy.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+
+          <a
+            href="https://giphy.com/gifs/eternalfamilytv-eternal-family-tv-99ers-rw4mJTxN3zQzquCRZp"
+            class="gif__link"
+            rel="noreferrer noopener nofollow"
+            target="_blank"
+            ><img
+              src="https://media3.giphy.com/media/rw4mJTxN3zQzquCRZp/giphy-downsized.gif?cid=f2be6aa17jqnuol5hjg3wqgac0jpkiopm1666d5cjgj56pmk&amp;ep=v1_gifs_search&amp;rid=giphy-downsized.gif&amp;ct=g"
+              alt="гифки"
+              class="gif undefined"
+            />
+          </a>
+        </section>
+        <button
+          id="nextPage"
+          class="button button_type_show-more"
+          type="button"
+        ></button>
+      </main>
+    </div>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
